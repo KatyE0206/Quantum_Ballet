@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>QUANTUM BALLET</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:black;
+    color:white;
+    font-family:'Montserrat', sans-serif;
+}
+
+/* ENCABEZADO */
+
+header{
+    width:100%;
+    padding:30px;
+    border-bottom:3px solid white;
+    text-align:center;
+}
+
+header h1{
+    font-size:50px;
+    margin-bottom:25px;
+    font-weight:900;
+}
+
+nav{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    border:2px solid white;
+    padding:12px 25px;
+    transition:0.4s;
+    font-size:18px;
+    font-weight:700;
+}
+
+nav a:hover{
+    background:white;
+    color:black;
+}
+
+/* SECCIONES */
+
+section{
+    padding:70px 40px;
+    border-bottom:3px solid white;
+}
+
+.titulo{
+    text-align:center;
+    font-size:45px;
+    margin-bottom:50px;
+    font-weight:900;
+}
+
+/* HISTORIA */
+
+.historia{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:50px;
+    flex-wrap:wrap;
+}
+
+.historia img{
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    border:5px solid white;
+}
+
+.historia p{
+    max-width:600px;
+    font-size:20px;
+    line-height:35px;
+    text-align:justify;
+}
+
+/* COLLAGE */
+
+.collage{
+    margin-top:50px;
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    flex-wrap:wrap;
+}
+
+.collage img{
+    width:250px;
+    height:250px;
+    border-radius:25px;
+    border:4px solid white;
+    object-fit:cover;
+}
+
+/* PAQUETES */
+
+.paquetes{
+    max-width:1100px;
+    margin:auto;
+}
+
+.paquete{
+    border:2px solid white;
+    padding:30px;
+    margin-bottom:30px;
+}
+
+.paquete h3{
+    font-size:30px;
+    margin-bottom:15px;
+}
+
+.paquete p{
+    font-size:18px;
+    line-height:32px;
+}
+
+/* VESTUARIO */
+
+.vestuario{
+    display:flex;
+    justify-content:center;
+    gap:40px;
+    flex-wrap:wrap;
+}
+
+.vestuario img{
+    width:350px;
+    height:350px;
+    object-fit:cover;
+    border:4px solid white;
+    border-radius:20px;
+}
+
+.texto-vestuario{
+    margin-top:40px;
+    text-align:center;
+    font-size:22px;
+    line-height:40px;
+}
+
+/* PROVEEDORES */
+
+.galeria{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.tarjeta{
+    border:2px solid white;
+    overflow:hidden;
+    transition:0.4s;
+}
+
+.tarjeta:hover{
+    transform:scale(1.03);
+}
+
+.tarjeta img{
+    width:100%;
+    height:250px;
+    object-fit:cover;
+}
+
+.contenido{
+    padding:20px;
+    text-align:center;
+}
+
+.contenido h3{
+    margin-bottom:10px;
+    font-size:28px;
+}
+
+.contenido p{
+    line-height:28px;
+}
+
+/* GALERIA */
+
+.container-galeria{
+    max-width:1100px;
+    margin:auto;
+    border:2px solid white;
+    padding:40px;
+}
+
+.container-galeria h2{
+    margin-top:40px;
+    margin-bottom:20px;
+    font-size:35px;
+    border-bottom:2px solid white;
+    padding-bottom:10px;
+}
+
+.texto-galeria{
+    font-size:20px;
+    line-height:35px;
+}
+
+.galeria-fotos{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:30px;
+}
+
+.galeria-fotos img,
+.galeria-fotos video{
+    width:250px;
+    height:320px;
+    object-fit:cover;
+    border:3px solid white;
+    border-radius:15px;
+}
+
+.video-container{
+    text-align:center;
+    margin-top:30px;
+}
+
+.video-container video{
+    width:100%;
+    max-width:700px;
+    border-radius:20px;
+    border:3px solid white;
+}
+
+.video-container p{
+    margin-top:15px;
+    font-size:20px;
+}
+
+.boton-galeria{
+    text-align:center;
+    margin-top:50px;
+}
+
+.boton-galeria a{
+    color:white;
+    text-decoration:none;
+    border:2px solid white;
+    padding:15px 35px;
+    font-size:20px;
+    font-weight:bold;
+    transition:0.4s;
+}
+
+.boton-galeria a:hover{
+    background:white;
+    color:black;
+}
+
+/* CONTACTO */
+
+.contenedor-direccion{
+    border:2px solid white;
+}
+
+.encabezado{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    border-bottom:3px solid white;
+    text-align:center;
+}
+
+.encabezado div{
+    padding:20px;
+    font-size:35px;
+    font-weight:900;
+}
+
+.info{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.izquierda{
+    border-right:3px solid white;
+    padding:40px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+
+.croquis{
+    font-size:40px;
+    margin-bottom:30px;
+    font-weight:900;
+}
+
+.imagen-mapa{
+    width:80%;
+    max-width:450px;
+    border-radius:15px;
+    border:3px solid white;
+}
+
+.direccion{
+    margin-top:30px;
+    text-align:center;
+}
+
+.direccion a{
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    line-height:35px;
+}
+
+.direccion a:hover{
+    text-decoration:underline;
+}
+
+.derecha{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+}
+
+.derecha a{
+    color:white;
+    text-decoration:none;
+    font-size:35px;
+    font-weight:800;
+    transition:0.4s;
+}
+
+.derecha a:hover{
+    transform:scale(1.1);
+}
+
+/* FORMULARIO */
+
+.formulario-container{
+    max-width:700px;
+    margin:auto;
+    border:2px solid white;
+    padding:40px;
+}
+
+form{
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+form input,
+form select,
+form textarea{
+    width:100%;
+    padding:18px;
+    background:black;
+    border:2px solid white;
+    color:white;
+    font-size:18px;
+    font-family:'Montserrat', sans-serif;
+}
+
+form textarea{
+    height:180px;
+    resize:none;
+}
+
+form button{
+    padding:18px;
+    background:black;
+    border:2px solid white;
+    color:white;
+    font-size:20px;
+    font-weight:800;
+    cursor:pointer;
+    transition:0.4s;
+}
+
+form button:hover{
+    background:white;
+    color:black;
+}
+
+/* FAQ */
+
+.faq-container{
+    max-width:900px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:25px;
+}
+
+.faq{
+    border:2px solid white;
+    padding:30px;
+}
+
+.faq h3{
+    font-size:28px;
+    margin-bottom:15px;
+}
+
+.faq p{
+    font-size:19px;
+    line-height:32px;
+}
+
+/* FOOTER */
+
+footer{
+    text-align:center;
+    padding:30px;
+    font-size:20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+    .historia{
+        flex-direction:column;
+    }
+
+    .info{
+        grid-template-columns:1fr;
+    }
+
+    .izquierda{
+        border-right:none;
+        border-bottom:3px solid white;
+    }
+
+    .encabezado{
+        grid-template-columns:1fr;
+    }
+
+    .derecha{
+        padding:40px 0;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+    <h1>QUANTUM BALLET REYNOSA</h1>
+
+    <nav>
+        <a href="#inicio">INICIO</a>
+        <a href="#paquetes">PAQUETES</a>
+        <a href="#vestuario">VESTUARIO</a>
+        <a href="#proveedores">PROVEEDORES</a>
+        <a href="#galeria">GALERÍA</a>
+        <a href="#contacto">CONTACTO</a>
+        <a href="#formulario">FORMULARIO</a>
+        <a href="#faq">FAQ</a>
+    </nav>
+
+</header>
+
+<section id="inicio">
+
+    <h2 class="titulo">LOGO E HISTORIA</h2>
+
+    <div class="historia">
+
+        <img src="Imagenes/logo.JPG">
+
+        <p>
+            Quantum Ballet es una agencia de chambelanes creada en 2010
+            por su actual director Javier Castillo y otros integrantes.
+            Reconocida por sus coreografías, elegancia y profesionalismo
+            en fiestas de XV años.
+        </p>
+
+    </div>
+
+    <div class="collage">
+
+        <img src="Imagenes/foto1.JPG">
+        <img src="Imagenes/foto2.JPG">
+        <img src="Imagenes/foto3.JPG">
+
+    </div>
+
+</section>
+
+<section id="paquetes">
+
+    <h2 class="titulo">PAQUETES</h2>
+
+    <div class="paquetes">
+
+        <div class="paquete">
+            <h3>GRUPO DE BAILE</h3>
+            <p>
+                Vals con 5 chambelanes, baile moderno y presentación especial.
+                Precio: $6,000.
+            </p>
+        </div>
+
+        <div class="paquete">
+            <h3>SHOW CARNAVAL</h3>
+            <p>
+                Incluye robot, oso y animación especial.
+                Precio: $4,000.
+            </p>
+        </div>
+
+        <div class="paquete">
+            <h3>SONIDO PROFESIONAL</h3>
+            <p>
+                DJ, animador, pantalla y efecto de humo.
+                Precio: $6,500.
+            </p>
+        </div>
+
+        <div class="paquete">
+            <h3>BANQUETE</h3>
+            <p>
+                Servicio completo para eventos.
+            </p>
+        </div>
+
+        <div class="paquete">
+            <h3>FOTOGRAFÍA Y VIDEO</h3>
+            <p>
+                Cobertura profesional del evento.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<section id="vestuario">
+
+    <h2 class="titulo">VESTUARIO</h2>
+
+    <div class="vestuario">
+
+        <img src="Imagenes/traje.jpg">
+        <img src="Imagenes/vaquero.jpg">
+
+    </div>
+
+    <div class="texto-vestuario">
+
+        <p>Para vals se utiliza traje formal.</p>
+
+        <p>Para bailes modernos se utiliza vestuario vaquero o informal.</p>
+
+    </div>
+
+</section>
+
+<section id="proveedores">
+
+    <h2 class="titulo">PROVEEDORES</h2>
+
+    <div class="galeria">
+
+        <div class="tarjeta">
+            <img src="Imagenes/Imagen.jpg">
+            <div class="contenido">
+                <h3>SONIDO</h3>
+                <p>El sonido utilizado en eventos.</p>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="Imagenes/Imagen2.jpg">
+            <div class="contenido">
+                <h3>LETRAS LED</h3>
+                <p>Ambientación profesional.</p>
+            </div>
+        </div>
+
+        <div class="tarjeta">
+            <img src="Imagenes/Imagen3.jfif">
+            <div class="contenido">
+                <h3>BANQUETE</h3>
+                <p>Servicio de banquete.</p>
+            </div>
+        </div>
+	<div class="tarjeta">
+            <img src="Imagenes/Imagen4.jfif">
+            <div class="contenido">
+                <h3>MARIACHI</h3>
+                <p>Mariachi profesional.</p>
+            </div>
+        </div>
+
+	<div class="tarjeta">
+	<img src="Imagenes/Imagen5.jfif" />
+	<div class="contenido">
+	<center>
+	<h3>Cabina Fotografica</h3>
+	<p>"La Cabina fotografica que ofrecemos."</p>
+	</center>
+	</div>
+	</div>
+
+      <div class="tarjeta">
+	<img src="Imagenes/Imagen6.jfif" />
+	<div class="contenido">
+	<center>
+	<h3>Trajes</h3>
+	<p>"Los trajes que usan los chambelanes."</p>
+	</center>
+	</div>
+	</div>
+
+      <div class="tarjeta">
+	<img src="Imagenes/Imagen7.jfif" />
+	<div class="contenido">
+	<center>
+	<h3>Fotografia y Video</h3>
+	<p>"La calidad de Fotografias y videos."</p>
+	</center>
+	</div>
+	</div>
+
+    </div>
+
+</section>
+
+<section id="galeria">
+
+    <h2 class="titulo">GALERÍA</h2>
+
+    <div class="container-galeria">
+
+        <h2>¿Qué es un Chambelán?</h2>
+
+        <p class="texto-galeria">
+            El chambelán es el acompañante principal de la quinceañera
+            y participa en vals y coreografías especiales.
+        </p>
+
+        <div class="galeria-fotos">
+
+            <img src="Imagenes/fotos.jpg">
+            <img src="Imagenes/fotos4.jpg">
+            <img src="Imagenes/fotos5.jpg">
+            <img src="Imagenes/fotos6.jpg">
+
+        </div>
+	<h2>VIDEO DE COREOGRAFÍA</h2>
+
+        <div class="video-container">
+
+            <video controls>
+                <source src="Videos/vid2.mp4" type="video/mp4">
+            </video>
+
+            <p><em>BAILE DE VALS</em></p>
+
+        </div>
+
+        <h2>FOTOS Y VIDEO</h2>
+
+        <div class="galeria-fotos">
+
+            <img src="Imagenes/fotos7.jpg">
+
+            <video controls>
+                <source src="Videos/vid1.mp4" type="video/mp4">
+            </video>
+
+            <img src="Imagenes/fotos8.jpg">
+
+        </div>
+
+        <div class="boton-galeria">
+
+            <a href="#inicio">
+                REGRESAR AL INICIO
+            </a>
+
+        </div>
+
+    </div>
+
+
+</section>
+
+<section id="contacto">
+
+    <h2 class="titulo">DIRECCIÓN Y CONTACTOS</h2>
+
+    <div class="contenedor-direccion">
+
+        <div class="encabezado">
+            <div>DIRECCIÓN</div>
+            <div>CONTACTOS</div>
+        </div>
+
+        <div class="info">
+
+            <div class="izquierda">
+
+                <div class="croquis">CROQUIS</div>
+
+                <img src="QUANTUM.jpeg" class="imagen-mapa">
+
+                <div class="direccion">
+
+                    <a href="https://maps.app.goo.gl/KiTw3jD67FMVAsG68" target="_blank">
+                        Av Beethoven #2904 Reynosa, Tamaulipas.
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="derecha">
+
+                <a href="https://wa.me/528991121880" target="_blank">
+                    WHATSAPP
+                </a>
+
+                <a href="https://www.facebook.com/share/1DxYNGXAFo/?mibextid=wwXIfr" target="_blank">
+                    FACEBOOK
+                </a>
+
+                <a href="https://www.instagram.com/quantum_ballet?igsh=bnI2d2V3N245OWE0" target="_blank">
+                    INSTAGRAM
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="formulario">
+
+    <h2 class="titulo">FORMULARIO DE CONTACTO</h2>
+
+    <div class="formulario-container">
+
+        <form>
+
+            <input type="text" placeholder="Nombre completo" required>
+
+            <input type="tel" placeholder="Número de teléfono" required>
+
+            <input type="email" placeholder="Correo electrónico">
+
+            <select required>
+                <option value="">Selecciona un servicio</option>
+                <option>Grupo de baile</option>
+                <option>Show carnaval</option>
+                <option>Sonido profesional</option>
+                <option>Banquete</option>
+                <option>Fotografía y video</option>
+            </select>
+
+            <textarea placeholder="Escribe tu mensaje..." required></textarea>
+
+            <button type="submit">
+                ENVIAR INFORMACIÓN
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<section id="faq">
+
+    <h2 class="titulo">PREGUNTAS FRECUENTES</h2>
+
+    <div class="faq-container">
+
+        <div class="faq">
+            <h3>¿Con cuánto tiempo se aparta la fecha?</h3>
+            <p>
+                Recomendamos apartar mínimo con 2 o 3 meses de anticipación.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>¿Cuántos chambelanes incluye el paquete?</h3>
+            <p>
+                El paquete principal incluye 5 chambelanes y coreografía.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>¿Se puede elegir la música?</h3>
+            <p>
+                Sí, la quinceañera puede elegir las canciones para vals y baile.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>¿Incluyen vestuario?</h3>
+            <p>
+                Sí, contamos con vestuario formal y moderno dependiendo del show.
+            </p>
+        </div>
+
+        <div class="faq">
+            <h3>¿Trabajan fuera de Reynosa?</h3>
+            <p>
+                Sí, también realizamos eventos fuera de Reynosa con previa cotización.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    QUANTUM BALLET REYNOSA ©️ 2026
+
+</footer>
+
+</body>
+</html>
